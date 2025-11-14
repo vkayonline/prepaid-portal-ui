@@ -11,7 +11,7 @@ export function ApplicationsPage() {
         <div className="flex flex-wrap justify-between items-center gap-4 mb-6">
           <div className="flex flex-col gap-1">
             <h1 className="text-3xl font-bold tracking-tight">
-              Applications
+              Application History
             </h1>
             <p className="text-muted-foreground">
               Track and manage all submitted and draft applications.

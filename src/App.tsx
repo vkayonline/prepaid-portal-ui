@@ -1,7 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 import { AppRoutes } from "./AppRoutes";
 import { AuthProvider, useAuth } from "./features/auth/context/AuthContext";
-import { Header } from "./layout/header";
 import { Sidebar } from "./layout/sidebar";
 
 function AppContent() {

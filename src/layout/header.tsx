@@ -1,8 +1,12 @@
 import { Button } from "@/commons/components/ui/button";
 import { Input } from "@/commons/components/ui/input";
+import OnboardingModal from "@/features/onboarding/components/OnboardingModal";
 import { BellIcon, PlusIcon, SearchIcon } from "lucide-react";
+import { useState } from "react";
 
 export function Header({ title }: { title: string }) {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <header className="border-b bg-card sticky top-0 z-10">
       <div className="flex items-center justify-between whitespace-nowrap max-w-7xl mx-auto px-6 lg:px-10 py-4">
@@ -23,12 +27,13 @@ export function Header({ title }: { title: string }) {
           <Button variant="outline" size="icon">
             <BellIcon />
           </Button>
-          <Button className="hidden sm:flex gap-2">
+          <Button className="hidden sm:flex gap-2" onClick={() => setModalOpen(true)}>
             <PlusIcon />
             <span className="truncate">New Onboarding</span>
           </Button>
         </div>
       </div>
+      <OnboardingModal open={modalOpen} onClose={() => setModalOpen(false)} />
     </header>
   );
 }
